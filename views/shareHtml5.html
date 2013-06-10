@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+  <head>
+    <title>Novedia Share</title>
+
+    <meta charset='utf-8'>
+    <script src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+    <script src='../js/fix-slide.js'></script>
+  </head>
+  <link type="text/css" href="css/template-novedia.css" rel="stylesheet" />
+  <link type="text/css" href="css/share-html5.css" rel="stylesheet" />
+  
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-novedia_share'>
+      
+      <!-- Your slides (<article>s) go here. Delete or comment out the
+           slides below. -->
+      <article>
+        <p>
+          <img style='height: 100%; width: 100%' src='images/novedia_share.png'>
+        </p>
+      </article>
+
+      <article>
+        <h1>
+          I've seen the
+          <br>
+          FUTURE
+          <br>
+          It's in my
+          <br>
+          BROWSER
+        </h1>
+        <p>
+          Harry Jumeau
+          <br>
+          28/01/2013
+        </p>
+      </article>
+      
+      <article>
+        <h3>Introduction</h3>
+        <p>
+          L'objectif de cette soirée sur le thème HTML5, est de vous sensibiliser à ce nouveau
+          standard du Web. Au travers d'exemples concrets...(a terminer)  
+           
+        </p>
+        <p>
+          Attiser votre curiosité et permettre d'identifier des sujets
+          à approfondir...
+        </p>
+      </article>
+
+      <article class='smaller'>
+        <h3>
+          Constat
+        </h3>
+        <p>
+          Divergence grandissante entre 
+            <ul>
+              <li>
+                les possibilités du langage HTML4    
+              </li>
+              <li>
+                les applications web actuelles                
+              </li>
+            </ul>
+        </p>
+        <br>
+        <p>
+          Résultat : une belle pagaille
+          <ul>
+            <li>
+            afflux de technologies côté client
+            </li>
+            <li>
+            le plein de plug-ins (flash, silverlight…)
+            </li>
+            <li>
+            divergences entre navigateurs
+            </li>
+          </ul>
+        </p>
+      </article>
+
+      <article class='smaller'>
+        <h3>
+          Naissance d’HTML5
+        </h3>
+        <p>
+          Confusion autour de HTML 5 
+            <br>
+            Travaux du WHATWG:
+            <br>
+            WebApps 1.0 et WebForms 2.0
+            <br>
+            Crée par Apple, Opera et Mozilla
+            <br>
+            Repris par le W3C comme base de travail
+        </p>
+        <p>
+          Candidate Recommandation : 2012
+            <br>
+            deux versions 5.0 et 5.1 
+            <br>
+            déjà implémenté partiellement
+            <br>
+            chrome, safari, opera, firefox, IE9
+            <br>
+            test avec http://html5test.com/
+        </p>
+        <p>
+          Adoption complète (2022) ? 
+            HTML 5.0 2014
+            <br>
+            HTML 5.1 2016
+        </p>
+      </article>
+
+      <article class='smaller'>
+        <h3>
+          Lignes directrices
+        </h3>
+        <p>
+          Compatibilité avec l’existant 
+            <br>
+            éléments obsolètes (a ne pas utiliser)
+            <br>
+            mais pas « deprecated » (le navigateur les affiche quand même)
+        </p>
+        <p>
+          Ne pas réinventer la roue
+            <br>
+            garder ce qui fonctionnait avant
+        </p>
+        <p>
+          Aboutir à une spécificateur réelle
+            <br>
+            préférer le pragmatisme à la pureté
+        </p>
+        <p>
+          Aller vers plus de simplicité :
+        </p>
+        <pre>
+        &lt;script type='text/javascript' src='file.js'/&gt;
+        //Devient :
+        &lt;script src='file.js'/&gt;</pre>
+        <p>Documenter les API Javascript</p>
+      </article>
+
+      <article class='smaller'>
+        <h3>
+           HTML 5 : principales fonctionnalités
+        </h3>
+        <ul>
+          <li>
+            Structure : nouvelles balises
+          </li>
+          <li>
+            Intégration audio et video
+          </li>
+          <li>
+            Images : SVG, Canvas, WebGL
+          </li>
+          <li>
+            Web Forms 2.0
+            <ul>
+              <li>
+                nouveaux types (dates, sliders …)
+              </li>
+              <li>
+                validation
+              </li>
+              <li>
+                autofocus
+              </li>
+              <li>
+                autocomplete  
+              </li>
+            </ul>
+          </li>
+          <li>
+            Microformats
+          </li>
+        </ul>
+      </article>
+
+      <article class='smaller'>
+        <h3>
+           CSS 3 : fonctionnalités
+        </h3>
+        <ul>
+          <li>
+            Nouveaux sélecteurs
+          </li>
+          <li>
+            Organisation en colonnes
+          </li>
+          <li>
+            Gestion de la typographie
+            <ul>
+              <li>
+              ombres, nouvelles fonts …
+              </li>
+            </ul>
+          </li>
+          <li>
+            Gestion des couleurs améliorée
+            <ul>
+              <li>
+                gradients, saturation
+              </li>
+            </ul>
+          </li>
+          <li>
+            Effets visuels :
+            <ul>
+              <li>
+                Arrondis
+              </li>
+              <li>
+                Opacité sur différents plans
+              </li>
+              <li>
+                Transitions
+              </li>
+              <li>
+                Transformations
+              </li>
+              <li>
+                Animations
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+
+      <article class='smaller'>
+        <h3>
+           JS API
+        </h3>
+        <ul>
+          <li>
+            Gestion d’un mode off-line
+          </li>
+          <li>
+            Stockage de données
+          </li>
+          <li>
+            Communication
+            <ul>
+              <li>
+                Web Sockets
+              </li>
+            </ul>
+          </li>
+          <li>
+            Notification
+          </li>
+          <li>
+            Tâches de fond(Web workers)
+          </li>
+          <li>
+            Géolocalisation
+          </li>
+        </ul>
+      </article>
+
+      <article class='smaller'>
+        <h3>
+           Conclusion
+        </h3>
+        <ul>
+          <li>
+            HTML5 est présenté comme le tueur de flash
+            <ul>
+              <li>
+                De nombreuses nouveautés (HTML5, CSS3, JS API)
+              </li>
+              <li>
+                Mais de écueils a éviter
+                <ul>
+                  <li>
+                    problèmes d’implémentation et de standardisation
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            Tout ce que nous allons couvrir est susceptible
+          <ul>
+              <li>
+                de subir des modifications
+              </li>
+              <li>
+                de ne pas fonctionner dans tous les navigateurs  
+              </li>
+              <li>
+                ou de fonctionner différemment
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+      <article class='smaller'>
+        <h3>Premiers pas</h3>
+        <p>
+          <img class='centered' style='height: 80%; width: 80%' src='/images/class-header-semantics.jpg'>
+        </p>
+      </article>
+      <article>
+        <h3>Plus de simplicité</h3>
+         <p>Avant
+           <pre>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+            </pre>
+          </p>
+          <p>Après
+            <pre>&lt;!DOCTYPE html&gt;
+  &lt;meta charset="UTF-8"&gt;
+            </pre>
+            cette seule mention permet d’éviter les modes de compatibilité (quirks) des  navigateurs
+          </p>
+      </article>  
+      <article class='smaller'>
+        <h3>Bye bye</h3>
+        <ul>Principaux éléments rendus obsolètes en HTML5
+          <li>frame, frameset, noframes</li>
+          <ul>
+            <li>- mais l’iframe existe toujours</li>
+          </ul> 
+          <li>font, big, center</li>
+            <ul><li>- on utilise des CSS</li></ul>
+         <li>applet</li>
+         <ul><li>- sans commentaire !</li></ul> 
+        </ul>
+      </article>
+      <article class='smaller'>
+        <h3>Structure du document</h3>
+      </article>
+      <article class='smaller'>
+        <h3>Balisage sémantique</h3>
+          <img src="/images/before_semantique.png">
+          <img src="/images/after_semantique.png">
+          <ul>
+          Mais à quoi ça sert ??? 
+          <li>Référencement, affichage, accessibilité</li>
+          <li>Ajouter du sens à la structure de la page</li>
+          </ul>  
+      </article>
+      <article class='smaller'>
+        <h3>Nouveaux tag html</h3>
+        <pre>
+&lt;input type="text" list="avis"&gt;
+&lt;datalist id="avis"&gt;
+  &lt;option value="Formidable"&gt;
+  &lt;option value="Stupéfiante"&gt;
+  &lt;option value="Colossale"&gt;
+  &lt;option value="Epoustouflante"&gt;
+  &lt;option value="Sensationnelle"&gt;
+  &lt;option value="Irréprochable"&gt;
+&lt;/datalist&gt;</pre>
+        <p>
+          Comment jugez-vous la qualité de ce support de présentation ?
+          <input type="text" list="avis">
+          <datalist id="avis">
+            <option value="Formidable">
+            <option value="Stupéfiante">
+            <option value="Colossale">
+            <option value="Epoustouflante">
+            <option value="Sensationnelle">
+            <option value="Renversante">
+            <option value="Irréprochable">
+          </datalist>
+        </p> 
+        <pre>
+&lt;details&gt;
+  &lt;summary>HTML 5&lt;/summary&gt;
+  C'est une révolution!
+&lt;/details&gt;
+        </pre> 
+        <details>
+          <summary>HTML 5</summary>
+          C'est une révolution!
+      </details>
+      </article>
+      <article class='smaller'>
+        <h3>Support des navigateurs</h3>
+      </article>
+      <article class='smaller'>
+        <h3>WebForms 2.0</h3>
+        <form>
+            <input name="name" placeholder="Your name" autofocus required><br>
+            <input name="prenom" placeholder="Your prenom" required><br>
+            <input name="date" type="date" placeholder="Your birthdate" required><br>
+            <input name="email" type="email" placeholder="Your email" required><br>
+            Combien d'années d'expériences ?<input type="range" min="0" max="10" value="0" step="2" />
+            <output onforminput="this.value = range.value">0</output> / 10
+            Votre couleur préférée ?<input name="colorpicker" type="color" /><br>
+            <span contentEditable> Vous pouvez modifier !!! </span><br>
+            <fieldset>
+            <legend>
+              <input type="checkbox" name="club" onchange="form.cfields.disabled = !checked" checked="checked"/>
+              <label for="club">Use Club Card</label>
+            </legend>
+              <p><label>Name on card : <input name="cname" required></label></p>
+              <p><label>Card number : <input name="cname" required pattern="[-0-9]+"></label></p>
+              <p><label>Expiry date : <input name="cname" type="month"></label></p>
+            </fieldset>
+            <input type="submit" value="Envoyer"><br>
+            <input type="checkbox" id="validationCheck"/>Avec Validation !<br>
+          </form>
+      </article>
+      <article class='smaller'>
+        <h3>Form types sur mobile</h3>
+      </article>
+      <article class='smaller'>
+        <h3>MicroData</h3>
+        <pre>
+&lt;div itemscope itemtype="http://schema.org/Recipe"&gt;
+  &lt;h1 itemprop="name">Recette d'une Tarte au Kiwi&lt;/h1&gt;
+  &lt;p&gt;
+    &lt;img itemprop="image" src="tarte-kiwi.jpg" alt="" /&gt;
+    &lt;span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"&gt;
+      &lt;span itemprop="ratingValue"&gt;4&lt;/span&gt;/&lt;span itemprop="bestRating">5&lt;/span&gt;
+    &lt;/span&gt; avec &lt;span itemprop="comment"&gt;35&lt;/span&gt; avis.
+  &lt;/p&gt;
+  &lt;p&gt;Durée totale : &lt;meta itemprop="totalTime" content="PT40M"&gt;40 mn&lt;/p&gt;  
+  &lt;h3&gt;Nutrition&lt;/h3&gt;
+  &lt;p itemprop="nutrition" itemscope itemtype="http://schema.org/NutritionInformation"&gt;
+    &lt;span itemprop="calories"&gt;240 calories&lt;/span&gt;
+  &lt;/p&gt;
+&lt;/div&gt;  
+        </pre>
+      </article>
+      <article class='smaller'>
+        <h3>Multimedia</h3>
+        <p>
+          <img class='centered' style='height: 80%; width: 80%' src='/images/class-header-multimedia.jpg'>
+        </p>
+      </article>
+      <article class='smaller'>
+        <h3>Video & Audio</h3>
+        <pre>
+&lt;video id="myVideoID" controls="controls" width="256" autoplay&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;source src="video.webm" type="video/webm"&gt;
+  &lt;source src="video.ogv"&gt;
+  &lt;source src="video.mkv"&gt;
+  Your browser does not support the &lt;code&gt;video&lt;/code&gt; element.
+&lt;/video&gt;
+&lt;audio id="myAudioID" controls="controls" &gt;
+  &lt;source src="ireel.ogg" type="audio/ogg" /&gt;
+  &lt;source src="ireel.mp3" type="audio/mp3" /&gt;
+  Your browser does not support the audio tag.
+&lt;/audio&gt;</pre>
+          <video id="myVideoID" controls="controls" width="256" autoplay>
+            <source src="video.mp4" type="video/mp4">
+            <source src="video.webm" type="video/webm">
+            <source src="video.ogv">
+            <source src="video.mkv">
+            Your browser does not support the <code>video</code> element.
+          </video>
+          <br>
+          <audio id="myAudioID" controls="controls" >
+            <source src="ireel.ogg" type="audio/ogg" />
+            <source src="ireel.mp3" type="audio/mp3" />
+            Your browser does not support the audio tag.
+          </audio>
+      </article>
+      <article class='smaller'>
+        <h3>Strorage</h3>
+        <p>
+          <img class='centered' style='height: 80%; width: 80%' src='/images/class-header-offline.jpg'>
+        </p>
+      </article>
+      <article class='smaller'>
+        <h3>Web Storage</h3>
+        <pre>
+saveButton.addEventListener('click', function () {
+  window.localStorage.setItem('value', area.value);
+}, false);
+textarea.value = window.localStorage.getItem('value');
+        </pre>
+        <p id="localstorage-message">Save text value on the client side (crash-safe)</p>
+        <textarea id="ta" placeholder="Type your text here..."></textarea>
+        <button id="save-ta">Save</button>
+        <script defer>
+          (function(){
+
+            try {
+              (window.localStorage.getItem) // will throw in Firefox under some settings
+            } catch(e){
+              return; // quit because dom.storage.enabled is false
+            }
+
+            var area = document.querySelector('#ta');
+            // place content from previous edit
+            if (!area.value) {
+              area.value = window.localStorage.getItem('value');
+            }
+
+            // your content will be saved locally
+            document.querySelector('#save-ta').addEventListener('click', function () {
+              window.localStorage.setItem('value', area.value);
+            }, false);
+          })();          
+        </script>
+      </article>
+      <article class='smaller'>
+        <h3>Web SQL Database</h3>
+      </article>
+      <article class='smaller'>
+        <h3>IndexedDB</h3>
+      </article>
+      <article class='smaller'>
+        <h3>Performance</h3>
+        <p>
+          <img class='centered' style='height: 80%; width: 80%' src='/images/class-header-performance.jpg'>
+        </p>
+      </article>
+      <article class='smaller'>
+        <h3>Web Worker</h3>
+      </article>
+      <article class='smaller'>
+        <h3>Connectivity</h3>
+        <p>
+          <img class='centered' style='height: 80%; width: 80%' src='/images/class-header-connectivity.jpg'>
+        </p>
+      </article>
+      <article class='smaller'>
+        <h3>Web Socket</h3>
+        <pre>
+var socket = new WebSocket('ws://localhost:3000');
+socket.onopen = function(event) {
+  socket.send('Hello, WebSocket');
+};
+socket.onmessage = function(event) { alert(event.data); }
+socket.onclose = function(event) { alert('closed'); }
+        </pre>
+          <div id="ws-send">
+            <input type="text" id="wsUri">
+            <button id="wsConnect">Connect</button>
+            <button id="wsDisconnect" disabled>Disconnect</button>
+            <br>
+            <input type="text" id="wsMessage" value="Hello, WebSocket" disabled>
+            <button id="wsSend" disabled>Send</button>
+          </div>
+          <div id="ws-log">
+            <div id="wsConsoleLog"></div>
+            <button id="wsClearLog">Clear log</button>
+          </div>
+        <script src='../js/ws-client.js' defer></script>
+      </article>
+      <article class='smaller'>
+        <h3>Presentation</h3>
+        <p>
+          <img class='centered' style='height: 80%; width: 80%' src='/images/class-header-css3.jpg'>
+        </p>
+      </article>
+      <article class='smaller'>
+        <h3>Les nouveaux sélecteurs</h3>
+        <div id="selecteur1" style="width:100%; overflow:hidden;"> 
+          <div style="width:35%; float:left">
+            <p>Avant</p>
+            <pre style="margin:0;">
+&lt;div&gt;
+  &lt;p class=&quot;row1&quot;&gt; Row1 &lt;/p&gt;
+  &lt;p class=&quot;row2&quot;&gt; Row2 &lt;/p&gt;
+  &lt;p class=&quot;row1&quot;&gt; Row3 &lt;/p&gt;
+  &lt;p class=&quot;row2&quot;&gt; Row4 &lt;/p&gt;
+&lt;/div&gt;
+
+.row1{
+  background-color: #dde;
+}
+.row2{
+  background-color: #fff;
+}
+            </pre>
+          </div>
+          <div style="margin-left:10px; width:35%; float:left">
+            <p>Maintenant</p>
+            <pre style="margin:0;">
+&lt;div&gt;
+  &lt;p class=&quot;row&quot;&gt; Row1 &lt;/p&gt;
+  &lt;p class=&quot;row&quot;&gt; Row2 &lt;/p&gt;
+  &lt;p class=&quot;row&quot;&gt; Row3 &lt;/p&gt;
+  &lt;p class=&quot;row&quot;&gt; Row4 &lt;/p&gt;
+&lt;/div&gt;
+
+.row<span style="color:red;font-weight:bold;">:nth-child(even)</span> {
+  background: #dde;
+}
+.row<span style="color:red;font-weight:bold;">:nth-child(odd)</span> {
+  background: white;
+}
+            </pre>
+          </div>
+
+          <div style="margin-left:10px;width:auto; float:left">
+            <p>Le rendu</p>
+            <div>
+              <p class="row"> Row1 </p>
+              <p class="row"> Row2 </p>
+              <p class="row"> Row3 </p>
+              <p class="row"> Row4 </p>
+            </div>
+          </div>
+        </div>
+      </article>
+      <article class='smaller'>
+        <div id="selecteur2" style="overflow:hidden;margin-top:20px;">
+          <p>D'autres nouveautés</p>
+          <pre style="margin:0; width:61%; float:left;">
+&lt;div&gt;
+  &lt;label for=&quot;inp&quot; class=&quot;labs&quot;&gt; Mon Input : &lt;/label&gt;
+  &lt;input id=&quot;inp&quot; type=&quot;text&quot; value=&quot;&quot;/&gt;
+  &lt;input type=&quot;hidden&quot; value=&quot;&quot;/&gt;
+  &lt;span class=&quot;row2&quot;&gt; Row2 &lt;/span&gt;
+  &lt;p&gt; J'ai un &lt;span class=&quot;row2&quot;&gt; span &lt;/span&gt; &lt;/p&gt;
+  &lt;p&gt; Je n'ai pas de span &lt;/p&gt;
+&lt;/div&gt;
+          </pre>
+          <pre style="margin:0 0 0 10px; width:30%; float:left">
+:not(.myLabels){
+  color: #dde;
+}
+:not(span){
+  display : block;
+}
+input<span style="color:red;font-weight:bold;">[type=&quot;text&quot;]</span> {
+  background: #eee;
+}
+h2<span style="color:red;font-weight:bold;">:first-child</span> { ... }
+            </pre>
+        </div>
+      </article>
+      <article class='smaller'>
+        <h3>CSS3 : Les mise en forme de textes</h3>
+          <div style="">
+            <p style="font-style:italic; font-weight:bold;">&gt; overflow:hidden</p>
+            <pre style="margin:0;">
+div{
+  overflow:hidden;
+  width:100%;height:10px;
+  padding:5px;
+}</pre>
+            <div style="margin-top:5px;overflow:hidden;width:766px;height:50px;font-size:30px;border:solid 1px #dde; padding:5px;">
+              Je suis sans conteste une longue phrase qui ne tiendra jamais dans ma div mère beaucoup trop courte pour afficher tout ce que j'ai à dire
+            </div>
+          </div>
+
+          <div style="margin-top:5px;">
+            <p style="font-style:italic; font-weight:bold;">&gt; overflow:hidden + white-space:nowrap</p>
+            <pre style="margin:0;">
+div{
+  overflow:hidden;white-space: nowrap;
+  width:100%;height:10px;
+  padding:5px;
+}</pre>
+            <div style="margin-top:5px;overflow:hidden;white-space: nowrap;width:766px;height:50px;font-size:30px;border:solid 1px #dde; padding:5px;">
+              Je suis sans conteste une longue phrase qui ne tiendra jamais dans ma div mère beaucoup trop courte pour afficher tout ce que j'ai à dire
+            </div>
+          </div>
+
+          <div style="margin-top:5px;">
+            <p style="font-style:italic; font-weight:bold;">&gt; overflow:hidden + text-overflow:ellipsis + white-space:nowrap</p>
+            <pre style="margin:0;">
+div{
+  overflow:hidden;text-overflow: ellipsis;white-space: nowrap;
+  width:100%;height:10px;
+  padding:5px;
+}</pre>
+            <div style="margin-top:5px;overflow:hidden;white-space:nowrap;width:766px;height:50px;font-size:30px;border:solid 1px #dde; padding:5px;">
+              Je suis sans conteste une longue phrase qui ne tiendra jamais dans ma div mère beaucoup trop courte pour afficher tout ce que j'ai à dire
+            </div>
+          </div>
+      </article>  
+      <article class='smaller'>
+        <h3>CSS3 : gestion de l'opacité et des layers</h3>
+          <div >
+            <pre style="margin:0;">
+color : rgba(255, 0, 0, <strong>0.91</strong>);
+background:rgba(0, 0,0,<strong>0.75</strong>);
+Le 4ème paramètre est celui qui gère la transparence</pre>
+            <div style="margin-top:5px;padding:15px;background-color:yellow;">
+              <div style=" text-align:center; padding:15px;">
+                <p style=" font-weight:bold;">Je vous avec la transparence du layer et du texte</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:20px;">
+            <pre style="margin:0;">
+color : rgba(255, 0, 0, <strong>0.6</strong>);
+background:rgba(0, 0,0,<strong>0.5</strong>);
+Le 4ème paramètre est celui qui gère la transparence</pre>
+            <div style="margin-top:5px;padding:15px;background-color:yellow;">
+              <div style=" text-align:center; padding:15px;">
+                <p style=" font-weight:bold;">Je vous avec la transparence du layer et du texte</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:20px;">
+            <pre style="margin:0;">
+color : rgba(255, 0, 0, <strong>0.91</strong>);
+background:rgba(0, 0,0,<strong>0.2</strong>);
+Le 4ème paramètre est celui qui gère la transparence</pre>
+            <div style="margin-top:5px;padding:15px;background-color:yellow;">
+              <div style=" text-align:center; padding:15px;">
+                <p style=" font-weight:bold;">Je vous avec la transparence du layer et du texte</p>
+              </div>
+            </div>
+          </div>
+      </article>
+      <article class='smaller'>
+        <h3>CSS3 : les border-radius</h3>
+          <div >
+            <pre style="margin:0;">
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;</pre>
+            <div style="margin-top:5px;padding:15px;background-color:blue;">
+                <p style="color:#fff; font-weight:bold;">Je suis une box avec tous mes angles arrondis de 5 pixels</p>
+            </div>
+          </div>
+
+          <div style="margin-top:35px;">
+           <pre style="margin:0;">
+-webkit-border-top-left-radius: 5px;
+-webkit-border-top-right-radius: 30px;
+-webkit-border-bottom-left-radius: 150px;
+-moz-border-radius-topleft: 2px;
+-moz-border-radius-topright: 30px;
+-moz-border-radius-bottomleft: 150px;
+border-top-left-radius: 2px;
+border-top-right-radius: 30px;
+border-bottom-left-radius: 150px;</pre>
+            <div style="text-align:center;margin-top:5px;padding:15px;background-color:blue;">
+                <p style="color:#fff; font-weight:bold;">Je suis une box avec dont l'angle :<br/>- haut gauche est arrondi de 5 pixels <br/>- haut droit est arrondi de 30 pixels <br/>- bas gauche est arrondi de 150px <br/>- bas droit n'est pas arrondi</p>
+            </div>
+          </div>
+      </article>      
+      <article class='smaller'>        
+        <h3>CSS3 : les dégradés de couleurs</h3>
+          <div style="margin-top:30px;" >
+            <pre style="margin:0;">
+background: -webkit-gradient(linear, left top, left bottom, 
+                             from(#00abeb), to(white), 
+                             color-stop(0.5, white), color-stop(0.5, #66cc00))</pre>
+            <div style=" height:100px; border:solid 1px blue; margin-top:15px;">
+            </div>
+          </div>
+      </article>
+      <article class='smaller'>
+        <h3>File / Hardware Access</h3>
+        <p>
+          <img class='centered' style='height: 80%; width: 80%' src='/images/class-header-device.jpg'>
+        </p>
+      </article>
+      <article class='smaller'>
+        <h3>Notifications</h3>
+        <label>Icon:<input type="text" id="iconNotif"></label><br>
+        <label>Title:<input type="text" id="titleNotif"></label><br>
+        <label>Message:<input type="text" id="msgNotif"></label><br>
+        <button id="askNotif">Ask permission to display notifications</button>
+        <button id="showNotif">Show notification</button>
+        <pre>
+function doShowNotif(){
+  if(window.webkitNotifications.checkPermission() == 0) {
+  // Create a new notification
+  var notification = window.webkitNotifications.createNotification(icon, title, msg);
+    notification.show();
+  }
+}
+function doAskPermission(){
+  window.webkitNotifications.requestPermission();
+}  
+        </pre>
+        <script src='../js/notifications.js' defer></script>
+      </article>
+      <article class='smaller'>
+        <h3>Géolocalisation</h3>  
+        <div id="map_canvas"></div>
+        <pre>
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(function(position) {
+    var latLng = new google.maps.LatLng(
+        position.coords.latitude, position.coords.longitude);
+    var marker = new google.maps.Marker({position: latLng, map: map});
+    map.setCenter(latLng);
+  }, errorHandler);
+}
+        </pre>
+        <script src='../js/geolocalisation.js'></script>
+      </article>
+      <article class='smaller'>
+        <h3>Speech Input</h3>
+        <input id="speech-input-field" type="text" x-webkit-speech>
+        <pre>
+          &lt;input type="text" x-webkit-speech /&gt;
+        </pre>  
+      </article>
+      <article class='smaller'>
+        <h3>Native Drag & Drop</h3>
+        <div id="container_damier">
+          <div id="damier"></div>
+          <pre style='width:350px;float: right'>
+square.addEventListener('drop', 
+  function(event) {
+    event.dataTransfer.getData('Text')
+  }, false);
+
+piece.addEventListener('dragstart', 
+  function(event) {
+    event.dataTransfer.setData('Text', 
+      event.target.getAttribute('id')
+    );
+}, false);
+          </pre>
+        </div>
+        <script src='../js/damier.js' defer></script>
+      </article>
+      <article class='smaller'>
+        <h3>Nuts & Bolts</h3>
+        <p>
+          <img class='centered' style='height: 80%; width: 80%' src='/images/nutsbolts.jpg'>
+        </p>
+      </article>
+      <article class='smaller'>
+        <h3>Nouveaux Sélecteurs</h3>
+      </article>
+      <article class='smaller'>
+        <h3>Element.classList</h3>
+      </article>
+      <article class='smaller'>
+        <h3>Support JSON natif</h3>
+      </article>
+      <!-- destaffer-->
+      <!--article class='smaller'>
+        <h3>XHR 2</h3>
+      </article>
+      <article class='smaller'>
+        <h3>XHR 2 + CORS</h3>
+      </article-->  
+      <article class='smaller'>
+        <h3>Les 5 mythes et vérités de HTML5</h3> 
+      </article>
+      <article class='smaller'>
+        <h3>Les 5 mythes</h3> 
+        <ul>
+          <li>Avec HTML5, mon site sera plus beau</li>
+          <li>Avec HTML5, mon site sera plus dynamique et réactif</li>
+          <li>Avec HTML5, je devrai tout réapprendre depuis zéro</li>
+          <li>Avec HTML5, je suis dans le Cloud</li>
+          <li>Pour HTML5, je dois faire appel à des startups primées à LeWeb©™</li>
+        </ul>
+      </article>
+      <article class='smaller'>
+        <h3>Les 5 vérités</h3> 
+        <ul>
+          <li>HTML5 est une technologie d'avenir</li>
+          <li>HTML5 est vaste</li>
+          <li>HTML5 améliore le référencement</li>
+          <li>HTML5 est plus accessible</li>
+          <li>HTML5 a plus d'affinités avec les mobiles et les tablettes</li>
+        </ul>
+      </article>
+      <article class='smaller'>
+        <h3>Les perspectives de HTML5</h3> 
+      </article>
+  </body>
+</html>

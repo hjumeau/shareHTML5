@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+  <head>
+    <title>Novedia Share</title>
+
+    <meta charset='utf-8'>
+    <script
+      src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script>
+  </head>
+  <link type="text/css" href="css/template-novedia.css" rel="stylesheet" />
+  
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-novedia_share'>
+      
+      <!-- Your slides (<article>s) go here. Delete or comment out the
+           slides below. -->
+        
+        
+      
+      <article>
+        <p>
+          <img style='height: 100%; width: 100%' src='images/novedia_share.png'>
+        </p>
+      </article>
+
+      <article>
+        <h1>
+          I've seen the
+          <br>
+          FUTURE
+          <br>
+          It's in my
+          <br>
+          BROWSER
+        </h1>
+        <p>
+          Harry Jumeau
+          <br>
+          28/01/2013
+        </p>
+      </article>
+      
+      <article>
+        <p>
+          L'objectif de cette soirée sur le thème HTML5, est de vous sensibiliser à ce nouveau
+          standard du Web. Nous allons démystifier ...
+           
+        </p>
+        <p>
+           va attiser votre curiosité et permettra d'identifier des sujets
+          à approfondir...
+        </p>
+      </article>
+
+      <article>
+        <h3>
+          Constat
+        </h3>
+        <p>
+          Divergence grandissante entre 
+            <ul>
+              <li>
+                les possibilités du langage HTML4    
+              </li>
+              <li>
+                les applications web actuelles                
+              </li>
+            </ul>
+        </p>
+        <br>
+        <p>
+          Résultat : une belle pagaille
+          <ul>
+            <li>
+            afflux de technologies côté client
+            </li>
+            <li>
+            le plein de plug-ins (flash, silverlight…)
+            </li>
+            <li>
+            divergences entre navigateurs
+            </li>
+          </ul>
+        </p>
+      </article>
+
+      <article>
+        <h3>
+          Naissance d’HTML5
+        </h3>
+        <p>
+          Confusion autour de HTML 5 
+            <br>
+            Travaux du WHATWG:
+            <br>
+            WebApps 1.0 et WebForms 2.0
+            <br>
+            Crée par Apple, Opera et Mozilla
+            <br>
+            Repris par le W3C comme base de travail
+        </p>
+        <p>
+          Candidate Recommandation : 2012
+            <br>
+            deux versions 5.0 et 5.1 
+            <br>
+            déjà implémenté partiellement
+            <br>
+            chrome, safari, opera, firefox, IE9
+            <br>
+            test avec http://html5test.com/
+        </p>
+        <p>
+          Adoption complète (2022) ? 
+            HTML 5.0 2014
+            <br>
+            HTML 5.1 2016
+        </p>
+      </article>
+
+      <article>
+        <h3>
+          Lignes directrices
+        </h3>
+        <p>
+          Compatibilité avec l’existant 
+            <br>
+            éléments obsolètes (a ne pas utiliser)
+            <br>
+            mais pas « deprecated » (le navigateur les affiche quand même)
+        </p>
+        <p>
+          Ne pas réinventer la roue
+            <br>
+            garder ce qui fonctionnait avant
+        </p>
+        <p>
+          Aboutir à une spécificateur réelle
+            <br>
+            préférer le pragmatisme à la pureté
+        </p>
+        <p>
+          Aller vers plus de simplicité :
+        </p>
+        <pre>
+        &lt;script type='text/javascript' src='file.js'/&gt;
+        //Devient :
+        &lt;script src='file.js'/&gt;</pre>
+        Documenter les API Javascript
+      </article>
+
+      <article>
+        <h3>
+           HTML 5 : principales fonctionnalités
+        </h3>
+        <ul>
+          <li>
+            Structure : nouvelles balises
+          </li>
+          <li>
+            Intégration audio et video
+          </li>
+          <li>
+            Images : SVG, Canvas, WebGL
+          </li>
+          <li>
+            Web Forms 2.0
+            <ul>
+              <li>
+                nouveaux types (dates, sliders …)
+              </li>
+              <li>
+                validation
+              </li>
+              <li>
+                autofocus
+              </li>
+              <li>
+                autocomplete  
+              </li>
+            </ul>
+          </li>
+          <li>
+            Microformats
+          </li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+           CSS 3 : fonctionnalités
+        </h3>
+        <ul>
+          <li>
+            Nouveaux sélecteurs
+          </li>
+          <li>
+            Organisation en colonnes
+          </li>
+          <li>
+            Gestion de la typographie
+            <ul>
+              <li>
+              ombres, nouvelles fonts …
+              </li>
+            </ul>
+          </li>
+          <li>
+            Gestion des couleurs améliorée
+            <ul>
+              <li>
+                gradients, saturation
+              </li>
+            </ul>
+          </li>
+          <li>
+            Effets visuels :
+            <ul>
+              <li>
+                Arrondis
+              </li>
+              <li>
+                Opacité sur différents plans
+              </li>
+              <li>
+                Transitions
+              </li>
+              <li>
+                Transformations
+              </li>
+              <li>
+                Animations
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+           JS API
+        </h3>
+        <ul>
+          <li>
+            Gestion d’un mode off-line
+          </li>
+          <li>
+            Stockage de données
+            <ul>
+              <li>
+              ombres, nouvelles fonts …
+              </li>
+            </ul>
+          </li>
+          <li>
+            Communication
+            <ul>
+              <li>
+                Web Sockets
+              </li>
+            </ul>
+          </li>
+          <li>
+            Notification
+          </li>
+          <li>
+            Tâches de fond(Web workers)
+          </li>
+          <li>
+            Géolocalisation
+          </li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+           Conclusion
+        </h3>
+        <ul>
+          <li>
+            HTML5 est présenté comme le tueur de flash
+            <ul>
+              <li>
+                De nombreuses nouveautés (HTML5, CSS3, JS API)
+              </li>
+              <li>
+                Mais de écueils a éviter
+                <ul>
+                  <li>
+                    problèmes d’implémentation et de standardisation
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            Tout ce que nous allons couvrir est susceptible
+          <ul>
+              <li>
+                de subir des modifications
+              </li>
+              <li>
+                de ne pas fonctionner dans tous les navigateurs  
+              </li>
+              <li>
+                ou de fonctionner différemment
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+
+      <article class='smaller'>
+        <h3>
+          Simple slide with header and text (small font)
+        </h3>
+        <p>
+          This is a slide with just text. This is a slide with just text.
+          This is a slide with just text. This is a slide with just text.
+          This is a slide with just text. This is a slide with just text.
+        </p>
+        <p>
+          There is more text just underneath with a <code>code sample: 5px</code>.
+        </p>
+      </article>
+
+      <article>
+        <h3>
+          Slide with bullet points and a longer title, just because we
+          can make it longer
+        </h3>
+        <ul>
+          <li>
+            Use this template to create your presentation
+          </li>
+          <li>
+            Use the provided color palette, box and arrow graphics, and
+            chart styles
+          </li>
+          <li>
+            Instructions are provided to assist you in using this
+            presentation template effectively
+          </li>
+          <li>
+            At all times strive to maintain Google's corporate look and feel
+          </li>
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+          Slide with bullet points that builds
+        </h3>
+        <ul class="build">
+          <li>
+            This is an example of a list
+          </li>
+          <li>
+            The list items fade in
+          </li>
+          <li>
+            Last one!
+          </li>
+        </ul>
+
+        <div class="build">
+          <p>Any element with child nodes can build.</p>
+          <p>It doesn't have to be a list.</p>
+        </div>
+      </article>
+
+      <article class='smaller'>
+        <h3>
+          Slide with bullet points (small font)
+        </h3>
+        <ul>
+          <li>
+            Use this template to create your presentation
+          <li>
+            Use the provided color palette, box and arrow graphics, and
+            chart styles
+          <li>
+            Instructions are provided to assist you in using this
+            presentation template effectively
+          <li>
+            At all times strive to maintain Google's corporate look and feel
+        </ul>
+      </article>
+
+      <article>
+        <h3>
+          Slide with a table
+        </h3>
+        
+        <table>
+          <tr>
+            <th>
+              Name
+            <th>
+              Occupation
+          <tr>
+            <td>
+              Luke Mahé
+            <td>
+              V.P. of Keepin’ It Real
+          <tr>
+            <td>
+              Marcin Wichary
+            <td>
+              The Michael Bay of Doodles
+        </table>
+      </article>
+      
+      <article class='smaller'>
+        <h3>
+          Slide with a table (smaller text)
+        </h3>
+        
+        <table>
+          <tr>
+            <th>
+              Name
+            <th>
+              Occupation
+          <tr>
+            <td>
+              Luke Mahé
+            <td>
+              V.P. of Keepin’ It Real
+          <tr>
+            <td>
+              Marcin Wichary
+            <td>
+              The Michael Bay of Doodles
+        </table>
+      </article>
+      
+      <article>
+        <h3>
+          Styles
+        </h3>
+        <ul>
+          <li>
+            <span class='red'>class="red"</span>
+          <li>
+            <span class='blue'>class="blue"</span>
+          <li>
+            <span class='green'>class="green"</span>
+          <li>
+            <span class='yellow'>class="yellow"</span>
+          <li>
+            <span class='black'>class="black"</span>
+          <li>
+            <span class='white'>class="white"</span>
+          <li>
+            <b>bold</b> and <i>italic</i>
+        </ul>
+      </article>
+      
+      <article>
+        <h2>
+          Segue slide
+        </h2>
+      </article>
+
+      <article>
+        <h3>
+          Slide with an image
+        </h3>
+        <p>
+          <img style='height: 500px' src='images/example-graph.png'>
+        </p>
+        <div class='source'>
+          Source: Sergey Brin
+        </div>
+      </article>
+
+      <article>
+        <h3>
+          Slide with an image (centered)
+        </h3>
+        <p>
+          <img class='centered' style='height: 500px' src='images/example-graph.png'>
+        </p>
+        <div class='source'>
+          Source: Larry Page
+        </div>
+      </article>
+
+      <article class='fill'>
+        <h3>
+          Image filling the slide (with optional header)
+        </h3>
+        <p>
+          <img src='images/example-cat.jpg'>
+        </p>
+        <div class='source white'>
+          Source: Eric Schmidt
+        </div>
+      </article>
+
+      <article>
+        <h3>
+          This slide has some code
+        </h3>
+        <section>
+        <pre>
+&lt;script type='text/javascript'&gt;
+  // Say hello world until the user starts questioning
+  // the meaningfulness of their existence.
+  function helloWorld(world) {
+    for (var i = 42; --i &gt;= 0;) {
+      alert('Hello ' + String(world));
+    }
+  }
+&lt;/script&gt;
+&lt;style&gt;
+  p { color: pink }
+  b { color: blue }
+  u { color: 'umber' }
+&lt;/style&gt;
+</pre>
+        </section>
+      </article>
+      
+      <article class='smaller'>
+        <h3>
+          This slide has some code (small font)
+        </h3>
+        <section>
+        <pre>
+&lt;script type='text/javascript'&gt;
+  // Say hello world until the user starts questioning
+  // the meaningfulness of their existence.
+  function helloWorld(world) {
+    for (var i = 42; --i &gt;= 0;) {
+      alert('Hello ' + String(world));
+    }
+  }
+&lt;/script&gt;
+&lt;style&gt;
+  p { color: pink }
+  b { color: blue }
+  u { color: 'umber' }
+&lt;/style&gt;
+</pre>
+        </section>
+      </article>
+      
+      <article>
+        <q>
+          The best way to predict the future is to invent it.
+        </q>
+        <div class='author'>
+          Alan Kay
+        </div>
+      </article>
+      
+      <article class='smaller'>
+        <q>
+          A distributed system is one in which the failure of a computer 
+          you didn’t even know existed can render your own computer unusable.
+        </q>
+        <div class='author'>
+          Leslie Lamport
+        </div>
+      </article>
+      
+      <article class='nobackground'>
+        <h3>
+          A slide with an embed + title
+        </h3>
+        
+        <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
+      </article>
+
+      <article class='nobackground'>
+        <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
+      </article>
+
+      <article class='fill'>
+        <h3>
+          Full-slide embed with (optional) slide title on top
+        </h3>
+        <iframe src='http://www.google.com/doodle4google/history.html'></iframe>
+      </article>
+      
+      <article>
+        <h3>
+          Thank you!
+        </h3>
+        
+        <ul>
+          <li>
+            <a href='http://www.google.com'>google.com</a>
+        </ul>
+      </article>
+
+    </section>
+
+  </body>
+</html>
