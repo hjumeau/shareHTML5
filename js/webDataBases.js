@@ -55,17 +55,21 @@
     }
 
     function loadTodoItems(tx, rs) {
-      var rowOutput = "";
       var todoItems = document.getElementById("todoItems");
+      todoItems.innerHTML = "";
       for (var i=0; i < rs.rows.length; i++) {
-        todoItems.innerHTML = renderTodo(rs.rows.item(i));
-        var row = document.getElementById("webdb_"+rs.rows.item(i).ID)
-        row.onclick = webdb.deleteTodo(rs.rows.item(i).ID);
+        todoItems.innerHTML += renderTodo(rs.rows.item(i));
+        var row = document.getElementById("webdb_"+rs.rows.item(i).ID);
+        var rowID = rs.rows.item(i).ID;
+        var onClick = function(){
+          webdb.deleteTodo(rowID);
+        };
+        row.onclick = onClick;
       }
     }
 
     function renderTodo(row) {
-      return "<li>" + row.todo  + " [<div id=" + "webdb_" + row.ID + ">Delete</div>]</li>";
+      return "<li>" + row.todo  + " [<a href='#' id=" + "webdb_" + row.ID + ">Delete</a>]</li>";
     }
 
     function init() {
