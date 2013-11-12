@@ -82,3 +82,10 @@ div {
 	width: 40px;
 	background-image:url('../images/bois_white.png');
 }
+
+.phone-virtual-key {
+
+	width: 24%;
+	float: left;
+	padding-right: 1%;
+}
