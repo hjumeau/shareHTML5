@@ -89,3 +89,9 @@ div {
 	float: left;
 	padding-right: 1%;
 }
+
+.speech-input{
+
+	width: 60%;
+	height: 24px;
+}

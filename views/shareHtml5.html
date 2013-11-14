@@ -548,9 +548,9 @@ textarea.value = window.localStorage.getItem('value');
       <article class='smaller'>
         <h3>IndexedDB</h3>
         <input type="text" id="todoIndexedDB" placeholder="What do you need to do?" style="width: 200px;" />
-        <ul id="todoItems"></ul>
+        <ul id="todoItemsIndexDB"></ul>
         <button id="addTodoIndexedDB">Add Todo Item</button>
-        <!--script src='../js/indexedDB.js' defer></script-->
+        <script src='../js/indexDB_new.js' defer></script>
       </article>
       <article class='smaller'>
         <h3>Performance</h3>
@@ -837,9 +837,9 @@ if (navigator.geolocation) {
       </article>
       <article class='smaller'>
         <h3>Speech Input</h3>
-        <input id="speech-input-field" type="text" x-webkit-speech>
+        <input class="speech-input" id="speech-input-field" type="text" x-webkit-speech>
         <pre>
-          &lt;input type="text" x-webkit-speech /&gt;
+&lt;input type="text" x-webkit-speech /&gt;
         </pre>  
       </article>
       <article class='smaller'>
@@ -867,9 +867,6 @@ piece.addEventListener('dragstart',
         <p>
           <img class='centered' style='height: 80%; width: 80%' src='/images/nutsbolts.jpg'>
         </p>
-      </article>
-      <article class='smaller'>
-        <h3>Nouveaux Sélecteurs</h3>
       </article>
       <article class='smaller'>
         <h3>Element.classList</h3>

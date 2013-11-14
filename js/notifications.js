@@ -18,7 +18,7 @@
 	function doShowNotif(){
 		if(window.webkitNotifications.checkPermission() == 0) {
 			// Create a new notification
-	    	var notification = window.webkitNotifications.createNotification(icon, title, msg);
+	    	var notification = window.webkitNotifications.createNotification(icon.value, title.value, msg.value);
 	    	notification.show();
    		}
 	}
