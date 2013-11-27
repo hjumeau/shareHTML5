@@ -1,9 +1,10 @@
-var l = 50000000;
-
-//on remplit un tableau
-for(var i = 0; i < l; i++){
-//tous les 100 tours, on informe le thread principal
-  if(i%100 === 0){
-    postMessage(i);
-  }
+var i = 0;
+var j = 0;
+while(true){
+	i++
+	if(i%1000000 === 0){
+		j++
+    	postMessage("Le worker a déjà fait "+j+" tours");
+  	}
 }
+  

@@ -1,47 +1,55 @@
 (function(){
 	
-	var elem = document.getElementById('webworkerOutput');
+	var container = document.getElementById('webworkerOutput');
 	var launchWithOutWWButton = document.getElementById("launchWithOutWebWorker");
 	var launchWithWWButton = document.getElementById("launchWithWebWorker");
+	var killWWButton = document.getElementById("killWebWorker");
+
+	killWWButton.disabled = true;
+
+	var elem = document.createElement("output");
+	container.appendChild(elem);
+
+	var w;
 
 	var webworker = {};
 	
-	webworker.initWithWW = function(){
+	webworker.launchWithWW = function(){
 		// initialisation du worker
-		var w = new Worker("../js/worker.js");
+		w = new Worker("../js/worker.js");
 
-		elem.innerHTML = "";
+		elem.value = "";
 		launchWithWWButton.disabled = true;
+		killWWButton.disabled = false;
 
 		//ajout d'un listener
 		w.addEventListener("message", function(event){
-		  elem.innerHTML = "Le worker a déjà fait "+
-		    event.data+" tours";
+		  elem.value = event.data;
 		});
-
-		setTimeout(function(){
-			// Au bout d'une seconde, on arrête le worker
-	  		w.terminate();
-	  		elem.innerHTML += " - Worker Éliminé!";
-	  		launchWithWWButton.disabled = false;
-		},50000);
 	};
 
-	webworker.initWithOutWW = function(){
+	webworker.kill = function(){
+		w.terminate();
+  		elem.value += " - Worker Éliminé!";
+  		launchWithWWButton.disabled = false;	
+	};
+
+	webworker.launchWithOutWW = function(){
 	
 		var l = 1000000000;
-		elem.innerHTML = "";
+		elem.value = "";
 		
 		//on remplit un tableau
 		for(var i = 0; i < l; i++){
 			//tous les 100 tours, on informe le thread principal
   			if(i%1000 === 0){
-				elem.innerHTML = "J'ai fait "+i+" tours";
+				elem.value = "J'ai fait "+i+" tours";
   			}
 		}
 	};
 
-	launchWithWWButton.onclick = webworker.initWithWW;
-	launchWithOutWWButton.onclick = webworker.initWithOutWW;
+	launchWithWWButton.onclick = webworker.launchWithWW;
+	launchWithOutWWButton.onclick = webworker.launchWithOutWW;
+	killWWButton.onclick = webworker.kill;
 
 })();
