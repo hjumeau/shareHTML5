@@ -40,23 +40,6 @@ html5rocks.indexedDB.open = function() {
                 var db = html5rocks.indexedDB.db;
                 console.log('db', db);
 
-                // START chrome (obsolete - will be removed)
-                if (typeof db.setVersion === 'function') {
-                        var versionReq = db.setVersion(3);
-                        versionReq.onsuccess = function (e) {
-                                console.log('versionReq', e);
-
-                                html5rocks.indexedDB.db = e.target.source; // instead of result
-                                var db = html5rocks.indexedDB.db;
-                                console.log('db', db);
-
-                                if(!db.objectStoreNames.contains('todo')){
-                                        db.createObjectStore('todo', {keyPath: 'timeStamp', autoIncrement: true});
-                                }
-                        }
-                }
-                // END chrome
-
                 html5rocks.indexedDB.getAllTodoItems();
         };
 };

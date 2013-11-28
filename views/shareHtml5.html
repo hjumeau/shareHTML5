@@ -328,7 +328,7 @@
           <img class='centered' style='height: 80%; width: 80%' src='/images/class-header-semantics.jpg'>
         </p>
       </article>
-      <article>
+      <article class="smaller">
         <h3>Plus de simplicité</h3>
          <p>Avant
            <pre>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
@@ -339,7 +339,7 @@
             <pre>&lt;!DOCTYPE html&gt;
   &lt;meta charset="UTF-8"&gt;
             </pre>
-            cette seule mention permet d’éviter les modes de compatibilité (quirks) des  navigateurs
+            <p>*cette seule mention permet d’éviter les modes de compatibilité (quirks) des  navigateurs</p>
           </p>
       </article>  
       <article class='smaller'>
@@ -405,26 +405,20 @@
       <article class='smaller'>
         <h3>WebForms 2.0</h3>
         <form>
-            <input name="name" placeholder="Your name" autofocus required><br>
-            <input name="prenom" placeholder="Your prenom" required><br>
-            <input name="date" type="date" placeholder="Your birthdate" required><br>
-            <input name="email" type="email" placeholder="Your email" required><br>
-            Combien d'années d'expériences ?<input type="range" min="0" max="10" value="0" step="2" />
-            <output onforminput="this.value = range.value">0</output> / 10
-            Votre couleur préférée ?<input name="colorpicker" type="color" /><br>
-            <span contentEditable> Vous pouvez modifier !!! </span><br>
-            <fieldset>
-            <legend>
-              <input type="checkbox" name="club" onchange="form.cfields.disabled = !checked" checked="checked"/>
-              <label for="club">Use Club Card</label>
-            </legend>
-              <p><label>Name on card : <input name="cname" required></label></p>
-              <p><label>Card number : <input name="cname" required pattern="[-0-9]+"></label></p>
-              <p><label>Expiry date : <input name="cname" type="month"></label></p>
-            </fieldset>
-            <input type="submit" value="Envoyer"><br>
-            <input type="checkbox" id="validationCheck"/>Avec Validation !<br>
-          </form>
+          <pre>
+&lt;input name="name" placeholder="Your name" autofocus required&gt;<input name="name" placeholder="Your name" autofocus required>
+&lt;input name="prenom" placeholder="Your prenom" required&gt;<input name="prenom" placeholder="Your prenom" required>
+&lt;input name="date" type="date" placeholder="Your birthdate"&gt;<input name="date" type="date" placeholder="Your birthdate">
+&lt;input name="email" type="email" placeholder="Your email" required&gt;
+<input name="email" type="email" placeholder="Your email" required>
+&lt;input name="number" type="number" placeholder="Your number" required&gt;
+<input name="number" type="number" placeholder="Your number" required>
+&lt;input type="range" min="0" max="10" value="0" step="2" /&gt;<input type="range" min="0" max="10" value="0" step="2" />
+&lt;input name="colorpicker" type="color" /&gt;<input name="colorpicker" type="color" />
+&lt;span contentEditable>Vous pouvez modifier!&lt;/span&gt;<span contentEditable>Vous pouvez modifier!</span>
+          </pre>
+          <input type="submit" value="Envoyer">
+        </form>
       </article>
       <article class='smaller'>
         <h3>Form types sur mobile</h3>
@@ -545,13 +539,45 @@ textarea.value = window.localStorage.getItem('value');
         <ul id="todoItems"></ul>
         <button id="addTodo">Add Todo Item</button>
         <script src='../js/webDataBases.js' defer></script>
+        <pre>
+var dbSize = 5 * 1024 * 1024; // 5MB
+webdb.db = openDatabase("Todo", "1.0", "Todo manager", dbSize);
+
+db.transaction(function(tx) {
+  tx.executeSql("CREATE TABLE IF NOT EXISTS todo(ID INTEGER PRIMARY KEY ASC, 
+  todo TEXT, added_on DATETIME)", []);
+});  
+
+db.transaction(function(tx){
+  var addedOn = new Date();
+  tx.executeSql("INSERT INTO todo(todo, added_on) VALUES (?,?)",
+    [todoText, addedOn],
+    webdb.onSuccess,webdb.onError);
+});
+        </pre>
       </article>
       <article class='smaller'>
         <h3>IndexedDB</h3>
         <input type="text" id="todoIndexedDB" placeholder="What do you need to do?" style="width: 200px;" />
         <ul id="todoItemsIndexDB"></ul>
         <button id="addTodoIndexedDB">Add Todo Item</button>
-        <script src='../js/indexDB_new.js' defer></script>
+        <script src='../js/indexDB.js' defer></script>
+        <pre>
+var dbSize = 5 * 1024 * 1024; // 5MB
+webdb.db = openDatabase("Todo", "1.0", "Todo manager", dbSize);
+
+db.transaction(function(tx) {
+  tx.executeSql("CREATE TABLE IF NOT EXISTS todo(ID INTEGER PRIMARY KEY ASC, 
+  todo TEXT, added_on DATETIME)", []);
+});  
+
+db.transaction(function(tx){
+  var addedOn = new Date();
+  tx.executeSql("INSERT INTO todo(todo, added_on) VALUES (?,?)",
+    [todoText, addedOn],
+    webdb.onSuccess,webdb.onError);
+});
+        </pre>
       </article>
       <article class='smaller'>
         <h3>Performance</h3>
@@ -565,6 +591,25 @@ textarea.value = window.localStorage.getItem('value');
         <button id="killWebWorker">Kill webWorker</button>
         <button id="launchWithOutWebWorker">Sans webWorker</button>
         <div id="webworkerOutput"></div>
+        <pre>
+// initialisation du worker
+w = new Worker("../js/worker.js");
+
+//ajout d'un listener
+w.addEventListener("message", function(event){
+  elem.value = event.data;
+});
+        </pre>
+        <pre>
+// le worker
+while(true){
+  i++
+  if(i%1000000 === 0){
+    j++
+      postMessage("Le worker a déjà fait "+j+" tours");
+    }
+}
+        </pre>
         <script src='../js/webWorker.js' defer></script>
       </article>
       </article>
@@ -870,16 +915,10 @@ piece.addEventListener('dragstart',
         <script src='../js/damier.js' defer></script>
       </article>
       <article class='smaller'>
-        <h3>Nuts & Bolts</h3>
-        <p>
-          <img class='centered' style='height: 80%; width: 80%' src='/images/nutsbolts.jpg'>
-        </p>
-      </article>
-      <article class='smaller'>
-        <h3>Element.classList</h3>
-      </article>
-      <article class='smaller'>
         <h3>Les 5 mythes et vérités de HTML5</h3> 
+        <p>
+          <img  class="centered" style='height: 60%; width: 66cc000%' src="http://www.w3.org/html/logo/downloads/HTML5_Badge.svg">
+        </p>
       </article>
       <article class='smaller'>
         <h3>Les 5 mythes</h3> 
