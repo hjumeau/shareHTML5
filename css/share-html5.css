@@ -95,3 +95,18 @@ div {
 	width: 60%;
 	height: 24px;
 }
+
+.timeline iframe{
+	margin-top: 20px;
+	height: 450px;
+}
+
+.shareHtml5 ul {
+	margin-left: 0px;
+}
+
+.shareHtml5 li {
+	margin-top: .5em;
+	margin-left: 1.7em;
+	margin-bottom: 0px;
+}

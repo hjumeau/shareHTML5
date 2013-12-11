@@ -17,14 +17,14 @@
     <title>Novedia Share</title>
 
     <meta charset='utf-8'>
+    <link type="text/css" href="css/template-novedia.css" rel="stylesheet" />
+    <link type="text/css" href="css/share-html5.css" rel="stylesheet" />
     <script src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script src='../js/fix-slide.js'></script>
   </head>
-  <link type="text/css" href="css/template-novedia.css" rel="stylesheet" />
-  <link type="text/css" href="css/share-html5.css" rel="stylesheet" />
   
-  <body style='display: none'>
+  <body style='display: none' class='shareHtml5'>
 
     <section class='slides layout-regular template-novedia_share'>
       
@@ -63,7 +63,7 @@
           Constat
         </h3>
         <img class='centered' src="/images/4vs5.jpg">
-        <p>
+        <div style="float : left; font-size : 26px; padding-top : 30px;">
           Divergence grandissante entre 
             <ul>
               <li>
@@ -73,8 +73,8 @@
                 les applications web actuelles                
               </li>
             </ul>
-        </p>
-        <p>
+        </div>
+        <div style="float : right; font-size : 26px; padding-top : 30px;">
           Résultat : une belle pagaille
           <ul>
             <li>
@@ -87,15 +87,15 @@
             divergences entre navigateurs
             </li>
           </ul>
-        </p>
+        </div>
       </article>
 
       <article class='smaller'>
         <h3>
           Naissance d’HTML5
         </h3>
-        <div height="300px">
-        <div class="dipity_embed" style="width:800px"><iframe width="800" height="300" src="http://www.dipity.com/novedia/Html5/?mode=embed&z=0#tl" style="border:1px solid #CCC;"></iframe><p style="margin:0;font-family:Arial,sans;font-size:13px;text-align:center"><a href="http://www.dipity.com/novedia/Html5/">Html5</a> on <a href="http://www.dipity.com/" />Dipity</a>.</p></div>
+        <div class="timeline">
+          <div class="dipity_embed" style="width:778px"><iframe width="800" height="300" src="http://www.dipity.com/novedia/Html5/?mode=embed&z=0#tl" style="border:1px solid #CCC;"></iframe><p style="margin:0;font-family:Arial,sans;font-size:13px;text-align:center"><a href="http://www.dipity.com/novedia/Html5/">Html5</a> on <a href="http://www.dipity.com/" />Dipity</a>.</p></div>
         </div>
         </p>
       </article>
@@ -104,31 +104,20 @@
         <h3>
           Lignes directrices
         </h3>
-        <p>
-          Compatibilité avec l’existant 
-            <br>
-            éléments obsolètes (a ne pas utiliser)
-            <br>
-            mais pas « deprecated » (le navigateur les affiche quand même)
-        </p>
-        <p>
-          Ne pas réinventer la roue
-            <br>
-            garder ce qui fonctionnait avant
-        </p>
-        <p>
-          Aboutir à une spécificateur réelle
-            <br>
-            préférer le pragmatisme à la pureté
-        </p>
-        <p>
-          Aller vers plus de simplicité :
-        </p>
+        <ul>
+        Compatibilité avec l’existant
+          <li>éléments obsolètes (a ne pas utiliser)</li>
+          <li>mais pas « deprecated » (le navigateur les affiche quand même)</li>
+        </ul>
+        <p>Ne pas réinventer la roue</p>
+        <p>Aboutir à une spécification réelle</p>
+        <p>Préférer le pragmatisme à la pureté</p>
+        <p>Documenter les API Javascript</p>
+        <p>Aller vers plus de simplicité :</p>
         <pre>
         &lt;script type='text/javascript' src='file.js'/&gt;
         //Devient :
         &lt;script src='file.js'/&gt;</pre>
-        <p>Documenter les API Javascript</p>
       </article>
 
       <article class='smaller'>
@@ -269,7 +258,11 @@
             librairie js pour tester les fonctionnalités supportées 
           </li>
           <li>
-            inclus des polyfills : implanter des fonctionnalités de HTML5 dans les navigateurs qui ne supportent pas nativement 
+            <details>
+              <summary>inclus des polyfills</summary>
+              <br>
+              Implante des fonctionnalités de HTML5 dans les navigateurs qui ne supportent pas nativement 
+            </details>
           </li>
         </ul>
       </article>
@@ -278,38 +271,27 @@
         <h3>
            Conclusion
         </h3>
-        <ul>
-          <li>
-            HTML5 est présenté comme le tueur de flash
-            <ul>
-              <li>
-                De nombreuses nouveautés (HTML5, CSS3, JS API)
-              </li>
-              <li>
-                Mais de écueils a éviter
-                <ul>
-                  <li>
-                    problèmes d’implémentation et de standardisation
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li>
-            Tout ce que nous allons couvrir est susceptible
           <ul>
-              <li>
-                de subir des modifications
-              </li>
-              <li>
-                de ne pas fonctionner dans tous les navigateurs  
-              </li>
-              <li>
-                ou de fonctionner différemment
-              </li>
-            </ul>
-          </li>
-        </ul>
+             HTML5 est présenté comme le tueur de flash
+            <li>
+              De nombreuses nouveautés (HTML5, CSS3, JS API)
+            </li>
+            <li>
+              problèmes d’implémentation et de standardisation
+            </li>
+          </ul>
+          <ul>
+            Tout ce que nous allons couvrir est susceptible
+            <li>
+              de subir des modifications
+            </li>
+            <li>
+              de ne pas fonctionner dans tous les navigateurs  
+            </li>
+            <li>
+              ou de fonctionner différemment
+            </li>
+          </ul>
       </article>
       <article class='smaller'>
         <h3>Premiers pas</h3>
@@ -336,24 +318,33 @@
         <ul>Principaux éléments rendus obsolètes en HTML5
           <li>frame, frameset, noframes</li>
           <ul>
-            <li>- mais l’iframe existe toujours</li>
+            <li>mais l’iframe existe toujours</li>
           </ul> 
           <li>font, big, center</li>
-            <ul><li>- on utilise des CSS</li></ul>
+            <ul><li>on utilise des CSS</li></ul>
          <li>applet</li>
-         <ul><li>- sans commentaire !</li></ul> 
+         <ul><li>sans commentaire !</li></ul> 
         </ul>
       </article>
       <article class='smaller'>
-        <h3>Structure du document</h3>
-          <p>Balisage sémentique</p>
-          <img src="/images/before_semantique.png">
-          <img src="/images/after_semantique.png">
-          <ul>
-          Mais à quoi ça sert ??? 
-          <li>Référencement, affichage, accessibilité</li>
-          <li>Ajouter du sens à la structure de la page</li>
-          </ul>  
+        <h3>Structure du document</h3> 
+          <div style='text-align:center; margin:20px 0px 30px;'>
+            <div style='display: inline-block;'>
+              <div>Avant</div> 
+              <img src="/images/before_semantique.png" style="display: block;">
+            </div>
+            <div style='display: inline-block;'>
+              <div>Après</div>
+              <img src="/images/after_semantique.png" style='display: block;'> 
+            </div>
+          </div>
+          <div>
+            <ul>
+            Nouveau balisage sémentique OK ! Mais à quoi ça sert ??? 
+              <li>référencement, affichage, accessibilité</li>
+              <li>ajouter du sens à la structure de la page</li>
+            </ul>
+          </div>  
       </article>
       <article class='smaller'>
         <h3>Nouveaux tag html</h3>
