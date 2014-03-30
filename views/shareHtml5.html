@@ -49,11 +49,11 @@
         <h3>Introduction</h3>
         <p>
           L'objectif de cette soirée sur le thème HTML5, est de vous sensibiliser à ce nouveau
-          standard du Web. Au travers d'exemples concrets.
+          standard du Web a travers des exemples concrets.
            
         </p>
         <p>
-          Attiser votre curiosité et permettre d'identifier des sujets
+          Et d'attiser votre curiosité pour permettre d'identifier des sujets
           à approfondir.
         </p>
       </article>
@@ -384,7 +384,7 @@
       </article>
       <article class='smaller'>
         <h3>WebForms 2.0</h3>
-        <form>
+        <form autocomplete='on' onsubmit='return false'>
           <pre>
 &lt;input name="name" placeholder="Your name" autofocus required&gt;<input name="name" placeholder="Your name" autofocus required>
 &lt;input name="prenom" placeholder="Your prenom" required&gt;<input name="prenom" placeholder="Your prenom" required>
@@ -448,11 +448,11 @@
       <article class='smaller'>
         <h3>Video & Audio</h3>
         <pre>
-&lt;video id="myVideoID" controls="controls" width="256" autoplay&gt;
+&lt;video id="myVideoID" controls="controls" width="256"&gt;
   &lt;source src="video.mp4" type="video/mp4"&gt;
   &lt;source src="video.webm" type="video/webm"&gt;
-  &lt;source src="video.ogv"&gt;
-  &lt;source src="video.mkv"&gt;
+  &lt;source src="video.ogv" type="video/ogv"&gt;
+  &lt;source src="video.mkv" type="video/mkv  "&gt;
   Your browser does not support the &lt;code&gt;video&lt;/code&gt; element.
 &lt;/video&gt;
 &lt;audio id="myAudioID" controls="controls" &gt;
@@ -460,10 +460,10 @@
   &lt;source src="ireel.mp3" type="audio/mp3" /&gt;
   Your browser does not support the audio tag.
 &lt;/audio&gt;</pre>
-          <video id="myVideoID" controls="controls" width="256" autoplay>
-            <source src="video.mp4" type="video/mp4">
-            <source src="video.webm" type="video/webm">
-            <source src="video.ogv">
+          <video id="myVideoID" controls="controls" width="256">
+            <source src="http://html5demos.com/assets/dizzy.mp4" type="video/mp4">
+            <source src="http://html5demos.com/assets/dizzy.webm" type="video/webm">
+            <source src="http://html5demos.com/assets/dizzy.ogv" type="video/ogv">
             <source src="video.mkv">
             Your browser does not support the <code>video</code> element.
           </video>

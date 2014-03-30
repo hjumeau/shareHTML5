@@ -110,3 +110,17 @@ div {
 	margin-left: 1.7em;
 	margin-bottom: 0px;
 }
+
+.chrome {
+	background-image:url('../images/compatible_chrome.gif');
+	background-repeat: no-repeat;
+	width: 31px;
+	height: 30px;
+}
+
+.opera {
+	background-image:url('../images/compatible_opera.gif');
+	background-repeat: no-repeat;
+	width: 31px;
+	height: 30px;
+}
