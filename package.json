@@ -4,7 +4,8 @@
  "dependencies": {
     "websocket": "1.0.8",
     "express": "3.1.0",
-    "ejs": "1.0.0"
+    "ejs": "1.0.0",
+    "debug": "*"	
  },
  "engines": {
    "node": "0.10.30",
