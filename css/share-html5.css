@@ -147,3 +147,99 @@ div {
 .safari {
 	background: url('http://www.w3schools.com/images/compatible_safari.gif') no-repeat;
 }
+
+.row:nth-child(even) {
+  background: #dde;
+}
+.row:nth-child(odd) {
+  background: white;
+}
+
+.formText1{
+	margin-top:5px;
+	overflow:hidden;
+	width:766px;
+	height:50px;
+	font-size:30px;
+	border:solid 1px #dde; 
+	padding:5px;
+}
+
+.formText2{
+	margin-top:5px;
+	overflow:hidden;
+	white-space: nowrap;
+	width:766px;
+	height:50px;
+	font-size:30px;
+	border:solid 1px #dde; 
+	padding:5px;
+}
+
+.formText3{
+	margin-top:5px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	width:766px;
+	height:50px;
+	font-size:30px;
+	border:solid 1px #dde; 
+	padding:5px;
+}
+
+.opacity1{
+	margin-top:5px;
+	padding:15px;
+	/*background-color:yellow;*/
+	color : rgba(255, 0, 0, 0.91);
+	background:rgba(0, 0,0,0.75);
+}
+
+.opacity2{
+	margin-top:5px;
+	padding:15px;
+	color : rgba(255, 0, 0, 0.6);
+	background:rgba(0, 0,0,0.5);
+}
+
+.opacity3{
+	margin-top:5px;
+	padding:15px;
+	color : rgba(255, 0, 0, 0.91);
+	background:rgba(0, 0,0,0.2);
+}
+
+.boxRadius1{
+	margin-top:5px;
+	padding:15px;
+	background-color:blue;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.boxRadius2{
+	text-align:center;
+	margin-top:5px;
+	padding:15px;
+	background-color:blue;
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 30px;
+	-webkit-border-bottom-left-radius: 150px;
+	-moz-border-radius-topleft: 2px;
+	-moz-border-radius-topright: 30px;
+	-moz-border-radius-bottomleft: 150px;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 30px;
+	border-bottom-left-radius: 150px;
+}
+
+.gradientBgd{
+	height:100px; 
+	border:solid 1px blue; 
+	margin-top:15px;
+	background: -webkit-gradient(linear, left top, left bottom, 
+                             from(#00abeb), to(white), 
+                             color-stop(0.5, white), color-stop(0.5, #66cc00))
+}
