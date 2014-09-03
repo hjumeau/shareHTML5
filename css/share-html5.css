@@ -243,3 +243,9 @@ div {
                              from(#00abeb), to(white), 
                              color-stop(0.5, white), color-stop(0.5, #66cc00))
 }
+
+iframe.noScrolling{
+   width: 800px; /*or any other size*/
+   height: 500px; /*or any other size*/
+   overflow: hidden;
+}

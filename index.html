@@ -95,10 +95,7 @@
         <h3>
           Naissance d’HTML5
         </h3>
-        <div class="timeline">
-          <div class="dipity_embed" style="width:778px"><iframe width="800" height="300" src="http://www.dipity.com/novedia/Html5/?mode=embed&z=0#tl" style="border:1px solid #CCC;"></iframe><p style="margin:0;font-family:Arial,sans;font-size:13px;text-align:center"><a href="http://www.dipity.com/novedia/Html5/">Html5</a> on <a href="http://www.dipity.com/" />Dipity</a>.</p></div>
-        </div>
-        </p>
+        <iframe src='vertical.html' scrolling="no" class="noScrolling"></iframe>
       </article>
 
       <article class='smaller'>
@@ -605,7 +602,7 @@ db.transaction(function(tx){
         <input type="text" id="todoIndexedDB" placeholder="What do you need to do?" style="width: 200px;" />
         <ul id="todoItemsIndexDB"></ul>
         <button id="addTodoIndexedDB">Add Todo Item</button>
-        <script src='../js/indexDB.js' defer></script>
+        <script src='../js/indexDB.js' async></script>
         <pre>
 var dbSize = 5 * 1024 * 1024; // 5MB
 webdb.db = openDatabase("Todo", "1.0", "Todo manager", dbSize);
@@ -661,7 +658,7 @@ while(true){
     }
 }
         </pre>
-        <script src='../js/webWorker.js' defer></script>
+        <script src='../js/webWorker.js' async></script>
       </article>
       </article>
       <article class='smaller'>
@@ -680,7 +677,7 @@ while(true){
           <span class="opera"></span>
         </div>
         <pre>
-var socket = new WebSocket('ws://localhost:3000');
+var socket = new WebSocket('ws://wsschat.herokuapp.com');
 socket.onopen = function(event) {
   socket.send('Hello, WebSocket');
 };
@@ -699,7 +696,7 @@ socket.onclose = function(event) { alert('closed'); }
             <div id="wsConsoleLog"></div>
             <button id="wsClearLog">Clear log</button>
           </div>
-        <script src='../js/ws-client.js' defer></script>
+        <script src='../js/ws-client.js' async></script>
       </article>
       <article class='smaller'>
         <h3>Presentation</h3>
@@ -942,7 +939,7 @@ function doAskPermission(){
   window.webkitNotifications.requestPermission();
 }  
         </pre>
-        <script src='../js/notifications.js' defer></script>
+        <script src='../js/notifications.js' async></script>
       </article>
       <article class='smaller'>
         <h3>Géolocalisation</h3>  
@@ -998,7 +995,7 @@ piece.addEventListener('dragstart',
 }, false);
           </pre>
         </div>
-        <script src='../js/damier.js' defer></script>
+        <script src='../js/damier.js' async></script>
       </article>
       <article class='smaller'>
         <h3>Les 5 mythes et vérités de HTML5</h3> 
