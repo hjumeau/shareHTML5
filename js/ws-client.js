@@ -12,7 +12,7 @@
   function wsHandlePageLoad() {
     
     wsUri = document.getElementById("wsUri");
-    wsUri.value = 'ws://'+window.location.hostname+':5000';
+    wsUri.value = 'ws://wsschat.herokuapp.com';
 
     wsConnect = document.getElementById("wsConnect");
     wsConnect.onclick = wsDoConnect;
