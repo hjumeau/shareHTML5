@@ -2,7 +2,6 @@
  "name": "shareHTML5",
  "version": "0.0.1",
  "dependencies": {
-    "websocket": "1.0.8",
     "express": "3.1.0",
     "debug": "*"	
  },

@@ -12,7 +12,7 @@
   function wsHandlePageLoad() {
     
     wsUri = document.getElementById("wsUri");
-    wsUri.value = 'ws://'+window.location.hostname+':5010';
+    wsUri.value = 'ws://'+window.location.hostname+':5000';
 
     wsConnect = document.getElementById("wsConnect");
     wsConnect.onclick = wsDoConnect;
