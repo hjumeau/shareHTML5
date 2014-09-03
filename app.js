@@ -3,15 +3,14 @@ var WebSocketServer = require('websocket').server;
 var http = require('http');
 var app = express();
 
-app.configure(function(){
-  app.set('port', process.env.PORT || 5000);
-  app.set("view options", {layout: false});
-  app.engine('html', require('ejs').renderFile);
-  app.use(express.static(__dirname));
-});
+app.set('port', process.env.PORT || 5000);
+//app.set("view options", {layout: false});
+//app.engine('html', require('ejs').renderFile);
+app.use(express.static(__dirname));
+
 app.get('/', function(req, res) {
 
-    res.render('shareHtml5.html');
+    res.render('index.html');
 });
 
 // spin up server
@@ -51,4 +50,6 @@ wsServer.on('request', function(request) {
     });
 });
 
-_httpServer.listen(3000);
+_httpServer.listen(5010, function(){
+  console.log("WebSocket server listening on port 5010")
+});
