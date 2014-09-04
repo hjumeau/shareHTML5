@@ -43,9 +43,9 @@ h1,h2,h4,h5,h6 {
 
 	#timeline {
 		width: 500px;
-		height: 600px;
+		height: 450px;
 		overflow: hidden;
-		margin: 40px auto;
+		margin: 15px auto;
 		position: relative;
 		background: url('../images/timeline/dot.gif') 3px top repeat-y;
 	}
@@ -125,14 +125,15 @@ h1,h2,h4,h5,h6 {
 		#grad_top,
 		#grad_bottom {
 			width: 500px;
-			height: 80px;
 			position: absolute;
 		}
 			#grad_top {
+				height: 100px;
 		        top: 0;
 		        background: url('../images/timeline/grad_top.png') repeat-x;
 			}
 			#grad_bottom {
+				height: 80px;
 		        bottom: 0;
 		        background: url('../images/timeline/grad_bottom.png') repeat-x;
 			}
