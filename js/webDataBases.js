@@ -61,10 +61,9 @@
         todoItems.innerHTML += renderTodo(rs.rows.item(i));
         var row = document.getElementById("webdb_"+rs.rows.item(i).ID);
         var rowID = rs.rows.item(i).ID;
-        var onClick = function(){
+        row.onclick = function(){
           webdb.deleteTodo(rowID);
         };
-        row.onclick = onClick;
       }
     }
 

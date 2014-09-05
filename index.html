@@ -447,13 +447,6 @@
       </article>
       <article class='smaller'>
         <h3>MicroData</h3>
-        <div class="imgHeader">
-          <span class="ie"></span>
-          <span class="firefox"></span>
-          <span class="chrome"></span>
-          <span class="safari"></span>
-          <span class="opera"></span>
-        </div>
         <pre>
 &lt;div itemscope itemtype="http://schema.org/Recipe"&gt;
   &lt;h1 itemprop="name">Banana Banana Bread Recipe&lt;/h1&gt;
@@ -563,8 +556,6 @@ textarea.value = window.localStorage.getItem('value');
       <article class='smaller'>
         <h3>Web SQL Database</h3>
         <div class="imgHeader">
-          <span class="ie"></span>
-          <span class="firefox"></span>
           <span class="chrome"></span>
           <span class="safari"></span>
           <span class="opera"></span>
@@ -593,10 +584,8 @@ db.transaction(function(tx){
       <article class='smaller'>
         <h3>IndexedDB</h3>
         <div class="imgHeader">
-          <span class="ie"></span>
           <span class="firefox"></span>
           <span class="chrome"></span>
-          <span class="safari"></span>
           <span class="opera"></span>
         </div>
         <input type="text" id="todoIndexedDB" placeholder="What do you need to do?" style="width: 200px;" />
@@ -604,19 +593,21 @@ db.transaction(function(tx){
         <button id="addTodoIndexedDB">Add Todo Item</button>
         <script src='../js/indexDB.js' async></script>
         <pre>
-var dbSize = 5 * 1024 * 1024; // 5MB
-webdb.db = openDatabase("Todo", "1.0", "Todo manager", dbSize);
+var db = null;          
+var request = indexedDB.open('todos', 5);
 
-db.transaction(function(tx) {
-  tx.executeSql("CREATE TABLE IF NOT EXISTS todo(ID INTEGER PRIMARY KEY ASC, 
-  todo TEXT, added_on DATETIME)", []);
-});  
-
-db.transaction(function(tx){
-  var addedOn = new Date();
-  tx.executeSql("INSERT INTO todo(todo, added_on) VALUES (?,?)",
-    [todoText, addedOn],
-    webdb.onSuccess,webdb.onError);
+request.onupgradeneeded = function(e) {
+  db = e.target.result;
+  db.createObjectStore('todo', {keyPath: 'timeStamp', autoIncrement: true});
+};
+request.onsuccess = function(e) {
+  db = e.target.result;
+};
+var trans = db.transaction(['todo'], 'readwrite');
+var store = trans.objectStore('todo');
+var request = store.put({
+  'text': todoText,
+  'timeStamp' : new Date().getTime()
 });
         </pre>
       </article>
@@ -902,13 +893,6 @@ background: -webkit-gradient(linear, left top, left bottom,
       </article>
       <article class='smaller'>
         <h3>File / Hardware Access</h3>
-        <div class="imgHeader">
-          <span class="ie"></span>
-          <span class="firefox"></span>
-          <span class="chrome"></span>
-          <span class="safari"></span>
-          <span class="opera"></span>
-        </div>
         <p>
           <img class='centered' style='height: 80%; width: 80%' src='/images/class-header-device.jpg'>
         </p>
@@ -916,11 +900,9 @@ background: -webkit-gradient(linear, left top, left bottom,
       <article class='smaller'>
         <h3>Notifications</h3>
         <div class="imgHeader">
-          <span class="ie"></span>
           <span class="firefox"></span>
           <span class="chrome"></span>
           <span class="safari"></span>
-          <span class="opera"></span>
         </div>
         <label>Icon:<input type="text" id="iconNotif"></label><br>
         <label>Title:<input type="text" id="titleNotif"></label><br>
@@ -929,16 +911,20 @@ background: -webkit-gradient(linear, left top, left bottom,
         <button id="showNotif">Show notification</button>
         <pre>
 function doShowNotif(){
-  if(window.webkitNotifications.checkPermission() == 0) {
-  // Create a new notification
-  var notification = window.webkitNotifications.createNotification(icon, title, msg);
-    notification.show();
+  if (window.Notification && Notification.permission !== "denied") {
+    var n = new Notification(title, { icon: icon, body: body });
   }
 }
 function doAskPermission(){
-  window.webkitNotifications.requestPermission();
-}  
-        </pre>
+  if (window.Notification && Notification.permission !== "granted") {
+    Notification.requestPermission(function (status) {
+        if (Notification.permission !== status) {
+          Notification.permission = status;
+      }
+    });
+  } 
+} 
+</pre>
         <script src='../js/notifications.js' async></script>
       </article>
       <article class='smaller'>
@@ -999,15 +985,13 @@ piece.addEventListener('dragstart',
       </article>
       <article class='smaller'>
         <h3>Les 5 mythes et vérités de HTML5</h3> 
-        <p>background-color
-          <img  class="centered" style='height: 60%; width: 60%' src="http://www.w3.org/html/logo/downloads/HTML5_Badge.svg">
-        </p>
+          <p><img  class="centered" style='height: 100%; width: 100%' src="images/html5-topper.png"></p>
       </article>
       <article class='smaller'>
         <h3>Les 5 mythes</h3> 
         <ul>
           <li>Avec HTML5, mon site sera plus beau</li>
-          <li>Avec HTML5, mon site sera plus dynamique et réactif</li>
+          <li>Avec HTML5, mon site sera plus dynamique et réactif *</li>
           <li>Avec HTML5, je devrai tout réapprendre depuis zéro</li>
           <li>Avec HTML5, je suis dans le Cloud</li>
           <li>Pour HTML5, je dois faire appel à des startups primées à LeWeb©™</li>
@@ -1025,6 +1009,9 @@ piece.addEventListener('dragstart',
       </article>
       <article class='smaller'>
         <h3>Les perspectives de HTML5</h3> 
+        <p><a href="http://codepen.io/jkneb/pen/smtHA">http://codepen.io/jkneb/pen/smtHA</a></p>
+        <p><a href="http://tweetping.net/#">http://tweetping.net/#</a></p>
+        <p><a href="http://mytripset.voyages-sncf.com/#/search/FR_fr">http://mytripset.voyages-sncf.com/#/search/FR_fr</a></p>
       </article>
   </body>
 </html>
