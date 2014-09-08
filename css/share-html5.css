@@ -8,6 +8,12 @@ div {
 	border-left: solid 1px #9a9ab3;
 	padding-left: 20px;
 }
+
+#ws-log p {
+	margin: 0px;
+	font-size: 12px;
+}
+
 #ws-send {
 	float: left;
 	width: 390px;
