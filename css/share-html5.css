@@ -254,8 +254,8 @@ div.animationTest {
     width: 100px;
     height: 100px;
     background: red;
-    -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
-    animation: myfirst 5s;
+    -webkit-animation: myfirst 60s; /* Chrome, Safari, Opera */
+    animation: myfirst 60s;
 }
 
 /* Chrome, Safari, Opera */
@@ -274,8 +274,8 @@ div.animationTest2 {
     width: 100px;
     height: 100px;
     background: red;
-    -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
-    animation: myfirst 5s;
+    -webkit-animation: myfirst 60s; /* Chrome, Safari, Opera */
+    animation: myfirst 60s;
 }
 
 /* Chrome, Safari, Opera */
@@ -299,8 +299,8 @@ div.animationTest3 {
     height: 100px;
     background: red;
     position: relative;
-    -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
-    animation: myfirst 5s;
+    -webkit-animation: myfirst 60s; /* Chrome, Safari, Opera */
+    animation: myfirst 60s;
 }
 
 /* Chrome, Safari, Opera */
