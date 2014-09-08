@@ -249,3 +249,23 @@ iframe.noScrolling{
    height: 500px; /*or any other size*/
    overflow: hidden;
 }
+
+div.animationTest {
+    width: 100px;
+    height: 100px;
+    background: red;
+    -webkit-animation: myfirst 5s; /* Chrome, Safari, Opera */
+    animation: myfirst 5s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    from {background: red;}
+    to {background: yellow;}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+    from {background: red;}
+    to {background: yellow;}
+}
