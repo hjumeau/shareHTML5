@@ -1,2 +1,3 @@
-
-/node_modules/*
+node_modules
+share-html5.sublime-project
+share-html5.sublime-workspace
