@@ -17,14 +17,14 @@ addTodoButton.onclick = function (e) {
 todoIndexedDB.open = function() {
         // you must increment the version by +1 in order to get the 'onupgradeneeded' event called
         // ONLY there you can modify the db itself e.g create new object stores and etc.
-        var request = indexedDB.open('todos', 5);
+        var request = indexedDB.open('todos', 1);
        
         request.onupgradeneeded = function(e) {
                 todoIndexedDB.db = e.target.result;
                 var db = todoIndexedDB.db;
 
                 if(!db.objectStoreNames.contains('todo')){
-                        db.createObjectStore('todo', {keyPath: 'timeStamp', autoIncrement: true});
+                        db.createObjectStore('todo', {keyPath: 'timeStamp'});
                 }
         };
 

@@ -50,7 +50,7 @@
         <h3>Introduction</h3>
         <p>
           L'objectif de cette soirée sur le thème HTML5, est de vous sensibiliser à ce nouveau
-          standard du Web a travers des exemples concrets.
+          standard du Web à travers des exemples concrets.
            
         </p>
         <p>
@@ -104,7 +104,7 @@
         </h3>
         <ul>
         Compatibilité avec l’existant
-          <li>éléments obsolètes (a ne pas utiliser)</li>
+          <li>éléments obsolètes (à ne pas utiliser)</li>
           <li>mais pas « deprecated » (le navigateur les affiche quand même)</li>
         </ul>
         <p>Ne pas réinventer la roue</p>
@@ -259,10 +259,13 @@
             <details>
               <summary>inclus des polyfills</summary>
               <br>
-              Implante des fonctionnalités de HTML5 dans les navigateurs qui ne supportent pas nativement 
+              Implante des fonctionnalités d'HTML5 dans les navigateurs qui ne supportent pas nativement 
             </details>
           </li>
         </ul>
+        <h4>Que puis-je utiliser?</h4>
+        <a href="http://html5test.com/" target="_blank"><p>html5test.com</p></a>
+        <a href="http://caniuse.com/  " target="_blank"><p>caniuse.com</p></a>
       </article>
 
       <article class='smaller'>
@@ -354,10 +357,8 @@
       <article class='smaller'>
         <h3>Nouveaux tag html</h3>
         <div class="imgHeader">
-          <span class="ie"></span>
           <span class="firefox"></span>
           <span class="chrome"></span>
-          <span class="safari"></span>
           <span class="opera"></span>
         </div>
         <pre>
@@ -383,6 +384,11 @@
             <option value="Irréprochable">
           </datalist>
         </p> 
+        <div class="imgHeader">
+          <span class="chrome"></span>
+          <span class="safari"></span>
+          <span class="opera"></span>
+        </div>
         <pre>
 &lt;details&gt;
   &lt;summary>HTML 5&lt;/summary&gt;
@@ -447,6 +453,9 @@
       </article>
       <article class='smaller'>
         <h3>MicroData</h3>
+        <div class="imgHeader">
+          <span class="firefox"></span>
+        </div>
         <pre>
 &lt;div itemscope itemtype="http://schema.org/Recipe"&gt;
   &lt;h1 itemprop="name">Banana Banana Bread Recipe&lt;/h1&gt;
@@ -594,24 +603,23 @@ db.transaction(function(tx){
         <ul id="todoItemsIndexDB"></ul>
         <button id="addTodoIndexedDB">Add Todo Item</button>
         <script src='../js/indexDB.js' async></script>
-        <pre>
-var db = null;          
-var request = indexedDB.open('todos', 5);
-
+        <pre>var request = indexedDB.open('todos', 2);
 request.onupgradeneeded = function(e) {
   db = e.target.result;
-  db.createObjectStore('todo', {keyPath: 'timeStamp', autoIncrement: true});
+  db.createObjectStore('todo', {keyPath: 'timeStamp'});
+  objectStore.createIndex("text", "text", { unique: true });
 };
-request.onsuccess = function(e) {
-  db = e.target.result;
-};
+
 var trans = db.transaction(['todo'], 'readwrite');
-var store = trans.objectStore('todo');
-var request = store.put({
-  'text': todoText,
+trans.objectStore('todo').put({
+  'text': 'data',
   'timeStamp' : new Date().getTime()
 });
-        </pre>
+
+var index = objectStore.index("text");
+index.get("data").onsuccess = function(event) {
+  alert("text : " + event.target.result.text);
+};</pre>
       </article>
       <article class='smaller'>
         <h3>Performance</h3>
@@ -825,7 +833,7 @@ background:rgba(0, 0,0,<strong>0.75</strong>);
 Le 4ème paramètre est celui qui gère la transparence</pre>
             <div class="opacity1">
               <div style=" text-align:center; padding:15px;">
-                <p style=" font-weight:bold;">Je vous avec la transparence du layer et du texte</p>
+                <p style=" font-weight:bold;">Je suis avec la transparence du layer et du texte</p>
               </div>
             </div>
           </div>
@@ -837,7 +845,7 @@ background:rgba(0, 0,0,<strong>0.5</strong>);
 Le 4ème paramètre est celui qui gère la transparence</pre>
             <div class="opacity2">
               <div style=" text-align:center; padding:15px;">
-                <p style=" font-weight:bold;">Je vous avec la transparence du layer et du texte</p>
+                <p style=" font-weight:bold;">Je suis avec la transparence du layer et du texte</p>
               </div>
             </div>
           </div>
@@ -849,7 +857,7 @@ background:rgba(0, 0,0,<strong>0.2</strong>);
 Le 4ème paramètre est celui qui gère la transparence</pre>
             <div class="opacity3">
               <div style=" text-align:center; padding:15px;">
-                <p style=" font-weight:bold;">Je vous avec la transparence du layer et du texte</p>
+                <p style=" font-weight:bold;">Je suis avec la transparence du layer et du texte</p>
               </div>
             </div>
           </div>
@@ -916,7 +924,7 @@ div {
     from {background: red;}
     to {background: yellow;}
 }</pre>
-            <p><b>Note:</b> Cette exemple ne fonctionne pas sur IE9 et les versions précédentes.</p>
+            <p><b>Note:</b> Cet exemple ne fonctionne pas sur IE9 et les versions précédentes.</p>
             <div class="animationTest">
             </div>
           </div>
@@ -940,7 +948,7 @@ div {
     50%  {background: blue;}
     100% {background: green;}
 }</pre>
-            <p><b>Note:</b> Cette exemple ne fonctionne pas sur IE9 et les versions précédentes.</p>
+            <p><b>Note:</b> Cet exemple ne fonctionne pas sur IE9 et les versions précédentes.</p>
             <div class="animationTest2">
             </div>
           </div>
@@ -970,7 +978,7 @@ div.animationTest3 {
     75%  {background:green; left:0px; top:200px;}
     100% {background:red; left:0px; top:0px;}
 }</pre>
-            <p><b>Note:</b> Cette exemple ne fonctionne pas sur IE9 et les versions précédentes.</p>
+            <p><b>Note:</b> Cet exemple ne fonctionne pas sur IE9 et les versions précédentes.</p>
             <div class="animationTest3">
             </div>
           </div>
